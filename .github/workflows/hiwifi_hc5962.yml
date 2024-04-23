@@ -4,7 +4,7 @@
 #   Author: Hyy2001X                                      #
 ###########################################################
 
-name: NEWIFI D2
+name: HiWiFi HC5962
 
 on:
   repository_dispatch:
@@ -26,12 +26,12 @@ on:
     inputs:
       Tempoary_CONFIG:
         description: '配置文件'
-        default: 'd-team_newifi-d2'
+        default: 'hiwifi_hc5962'
         type: choice
         options:
-          - 'd-team_newifi-d2'
-          - 'd-team_newifi-d2-Clash'
-          - 'd-team_newifi-d2-Lite'
+          - 'hiwifi_hc5962'
+          - 'hiwifi_hc5962-Clash'
+          - 'hiwifi_hc5962-Lite'
       Tempoary_FLAG:
         description: '固件标签'
         default: 'AUTO'
