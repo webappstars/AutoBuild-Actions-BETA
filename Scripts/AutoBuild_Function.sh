@@ -87,9 +87,6 @@ Firmware_Diy_Start() {
 		TARGET_FLAG="${Tempoary_FLAG}"
 	fi
 	case "${TARGET_BOARD}" in
-	x86)
-		AutoBuild_Fw="AutoBuild-${OP_REPO}-${TARGET_PROFILE}-${OP_VERSION}-BOOT-${TARGET_FLAG}-SHA256.FORMAT"
-	;;
 	*)
 		AutoBuild_Fw="AutoBuild-${OP_REPO}-${TARGET_PROFILE}-${OP_VERSION}-${TARGET_FLAG}-SHA256.FORMAT"
 	;;
@@ -328,10 +325,12 @@ Firmware_Diy_End() {
 	ECHO "[$(date "+%H:%M:%S")] Actions Avaliable: $(df -h | grep "/dev/root" | awk '{printf $4}')"
 	cd ${WORK}
 	echo -e "### FIRMWARE OUTPUT ###"
-	du -ah bin/targets | egrep -v "${Regex_Skip}"
+	du -ah bin/targets | egrep -v "${Regex_Skip}" | grep -v 'ipk'
 	MKDIR ${WORK}/bin/Firmware
 	Fw_Path="${WORK}/bin/targets/${TARGET_BOARD}/${TARGET_SUBTARGET}"
 	cd "${Fw_Path}"
+	echo -e "### SHA256SUMS ###"
+	cat sha256sums
 	case "${TARGET_BOARD}" in
 	x86)
 		if [[ ${x86_Full_Images} == true ]]
@@ -369,22 +368,29 @@ Process_Fw_Core() {
 	Fw_Format=$1
 	shift
 	while [[ $1 ]];do
-		Fw=${AutoBuild_Fw}
 		case "${TARGET_BOARD}" in
 		x86)
-			[[ $1 =~ efi ]] && Fw_Boot=UEFI || Fw_Boot=BIOS
-			Fw=${Fw/BOOT/${Fw_Boot}}
+			if [[ $1 =~ efi ]]
+			then
+				Fw=${AutoBuild_Fw/SHA256/$(Get_sha256 $1)}
+				Fw=${Fw/FORMAT/${Fw_Format}}
+				if [[ -f $1 ]]
+				then
+					ECHO "Move x86 image [$1] to [${Fw}] ..."
+					mv -f $1 ${Fw}
+				fi
+			fi
+		;;
+		*)
+			Fw=${AutoBuild_Fw/SHA256/$(Get_sha256 $1)}
+			Fw=${Fw/FORMAT/${Fw_Format}}
+			if [[ -f $1 ]]
+			then
+				ECHO "Move generic firmware [$1] to [${Fw}] ..."
+				mv -f $1 ${Fw}
+			fi
 		;;
 		esac
-		Fw=${Fw/SHA256/$(Get_sha256 $1)}
-		Fw=${Fw/FORMAT/${Fw_Format}}
-		if [[ -f $1 ]]
-		then
-			ECHO "Copy [$1] to [${Fw}] ..."
-			cp -a $1 ${Fw}
-		else
-			ECHO "Failed to copy [${Fw}] ..."
-		fi
 		shift
 	done
 }

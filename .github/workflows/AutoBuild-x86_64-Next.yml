@@ -26,17 +26,16 @@ on:
     inputs:
       Tempoary_CONFIG:
         description: '配置文件'
-        default: 'x86_64-NextAP'
+        default: 'x86_64-Next'
         type: choice
         options:
-          - 'x86_64-NextAP'
+          - 'x86_64-Next'
       Tempoary_FLAG:
         description: '固件标签'
         default: 'AUTO'
         type: choice
         options:
           - 'AUTO'
-          - 'NextAP'
       Tempoary_IP:
         description: '固件 IP 地址 [可选]'
         default: ''
@@ -58,9 +57,9 @@ on:
 ### 环境变量设置
 env:
 # 编译时调用的 [.config] 文件名称
-  CONFIG_FILE: x86_64-AP
+  CONFIG_FILE: x86_64-Next
 # 源码仓库:分支
-  DEFAULT_SOURCE: immortalwrt/immortalwrt:openwrt-23.05
+  DEFAULT_SOURCE: immortalwrt/immortalwrt:master
 # 删除无用文件以增加编译空间
   DELETE_USELESS_FILES: true
 # 删除早期的 workflow 任务
@@ -82,7 +81,7 @@ jobs:
 
     - name: "Optimize disk space"
       if: env.DELETE_USELESS_FILES == 'true' && !cancelled()
-      uses: "hugoalh/disk-space-optimizer-ghaction@v0.8.0"
+      uses: "hugoalh/disk-space-optimizer-ghaction@v0.8.1"
       with:
         operate_sudo: "True"
         general_include: ".+"
