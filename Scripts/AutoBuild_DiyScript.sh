@@ -162,8 +162,8 @@ EOF
 			AddPackage passwall-luci xiaorouji openwrt-passwall main
 		;;
                 hc5962)
-			AddPackage passwall-depends xiaorouji openwrt-passwall-packages main
-			AddPackage passwall-luci xiaorouji openwrt-passwall main
+			AddPackage passwall xiaorouji openwrt-passwall-packages main
+			AddPackage passwall xiaorouji openwrt-passwall main
 		;;
 		esac
 	;;
