@@ -6,17 +6,9 @@ CONFIG_TARGET_ramips_mt7621_DEVICE_hiwifi_hc5962=y
 
 CONFIG_PACKAGE_luci-app-adbyby-plus=y
 
-
-
-# SSR PLUS+
-CONFIG_PACKAGE_luci-app-ssr-plus=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
-
 # Other Appliciations
 CONFIG_PACKAGE_iptables-mod-socket=y
 CONFIG_PACKAGE_iptables-mod-iprange=y
 
 # Themes
-CONFIG_PACKAGE_luci-theme-argone=y
-CONFIG_PACKAGE_luci-i18n-argone-config-zh-cn=y
-CONFIG_PACKAGE_luci-app-argone-config=y
+CONFIG_PACKAGE_luci-theme-argon-new=y
