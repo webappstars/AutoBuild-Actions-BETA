@@ -5,10 +5,9 @@ CONFIG_TARGET_ramips_mt7621_DEVICE_hiwifi_hc5962=y
 # LUCI Appliciations
 
 CONFIG_PACKAGE_luci-app-adbyby-fix=y
+CONFIG_PACKAGE_luci-app-passwall=y
 
-# Other Appliciations
-#CONFIG_PACKAGE_firewall is not set
-CONFIG_PACKAGE_firewall4=y
+
 
 # Themes
 CONFIG_PACKAGE_luci-theme-argon-new=y
