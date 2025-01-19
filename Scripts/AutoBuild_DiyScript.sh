@@ -102,9 +102,9 @@ EOF
 		rm -r ${FEEDS_LUCI}/luci-app-mosdns
 		rm -r ${FEEDS_LUCI}/luci-theme-argon*
 		#AddPackage other vernesong OpenClash dev
-		AddPackage other jerrykuku luci-app-argon-config
-		AddPackage other sbwml luci-app-mosdns
-		AddPackage themes jerrykuku luci-theme-argon
+		AddPackage other jerrykuku luci-app-argon-config master 
+		AddPackage other sbwml luci-app-mosdns v5
+		AddPackage themes jerrykuku luci-theme-argon master
 		#AddPackage themes thinktip luci-theme-neobird main
 		#AddPackage msd_lite ximiTech luci-app-msd_lite main
 		#AddPackage msd_lite ximiTech msd_lite main
@@ -112,7 +112,7 @@ EOF
 		
 		#rm -r ${FEEDS_PKG}/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*}
                 #rm -r ${FEEDS_PKG}/utils/v2dat
-                rm -r ${FEEDS_PKG}/lang/golang
+                #rm -r ${FEEDS_PKG}/lang/golang
 		rm -r ${FEEDS_PKG}/curl
 		#rm -r ${FEEDS_PKG}/msd_lite
                 git clone https://github.com/kenzok8/golang ${FEEDS_PKG}/lang/golang
