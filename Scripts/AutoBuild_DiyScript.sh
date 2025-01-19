@@ -98,23 +98,23 @@ EOF
 		# sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase="/luci-static/argon-mod"' $(PKG_Finder d package default-settings)/files/zzz-default-settings
 		#sed -i "s?openwrt-23.05?master?g" ${FEEDS_CONF}
 		# git reset --hard 1627fd2c745e496134834a8fb8145ba0aa458ae9
-		
-		#rm -r ${FEEDS_LUCI}/luci-theme-argon*
+		rm -r ${FEEDS_PKG}/mosdns
+		rm -r ${FEEDS_LUCI}/luci-app-mosdns
+		rm -r ${FEEDS_LUCI}/luci-theme-argon*
 		#AddPackage other vernesong OpenClash dev
-		#AddPackage other jerrykuku luci-app-argon-config 18.06
+		AddPackage other jerrykuku luci-app-argon-config
 		AddPackage other sbwml luci-app-mosdns
-		#AddPackage themes jerrykuku luci-theme-argon 18.06
+		AddPackage themes jerrykuku luci-theme-argon
 		#AddPackage themes thinktip luci-theme-neobird main
 		#AddPackage msd_lite ximiTech luci-app-msd_lite main
 		#AddPackage msd_lite ximiTech msd_lite main
 		#AddPackage iptvhelper riverscn openwrt-iptvhelper master
-		#rm -r ${FEEDS_PKG}/mosdns
-		#rm -r ${FEEDS_LUCI}/luci-app-mosdns
+		
 		#rm -r ${FEEDS_PKG}/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*}
-                rm -r ${FEEDS_PKG}/utils/v2dat
+                #rm -r ${FEEDS_PKG}/utils/v2dat
                 rm -r ${FEEDS_PKG}/lang/golang
 		rm -r ${FEEDS_PKG}/curl
-		rm -r ${FEEDS_PKG}/msd_lite
+		#rm -r ${FEEDS_PKG}/msd_lite
                 git clone https://github.com/kenzok8/golang ${FEEDS_PKG}/lang/golang
 		Copy ${CustomFiles}/curl ${FEEDS_PKG}
 		
@@ -165,9 +165,9 @@ EOF
 			AddPackage passwall-depends xiaorouji openwrt-passwall-packages main
 			AddPackage passwall-luci xiaorouji openwrt-passwall main
 		;;
-                #hc5962)
-			#AddPackage passwall xiaorouji openwrt-passwall-packages main
-			#AddPackage passwall xiaorouji openwrt-passwall main
+                hc5962)
+			AddPackage passwall xiaorouji openwrt-passwall-packages main
+			AddPackage passwall-luci xiaorouji openwrt-passwall main
 		#;;
 		esac
 	;;
