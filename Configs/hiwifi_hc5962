@@ -5,6 +5,8 @@ CONFIG_TARGET_ramips_mt7621_DEVICE_hiwifi_hc5962=y
 # CONFIG_SIGNATURE_CHECK is not set
 # CONFIG_SIGNED_PACKAGES is not set
 
+CONFIG_PACKAGE_ipv6helper=y
+
 # LUCI Appliciations
 # CONFIG_PACKAGE_luci-app-mwan3helper-chinaroute is not set
 
