@@ -116,7 +116,7 @@ EOF
                 #rm -r ${FEEDS_PKG}/lang/golang
 		rm -r ${FEEDS_PKG}/curl
 		#rm -r ${FEEDS_PKG}/msd_lite
-                git clone https://github.com/kenzok8/golang ${FEEDS_PKG}/lang/golang
+                
 		Copy ${CustomFiles}/curl ${FEEDS_PKG}
 		
 		case "${TARGET_BOARD}" in
@@ -179,7 +179,7 @@ EOF
 			sed -i "s?+mosdns ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
 			sed -i "s?+v2ray-geoip ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
 			sed -i "s?+v2ray-geosite ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
-			#rm -r ${WORK}/package/other/luci-app-mosdns/mosdns
+			rm -r ${WORK}/package/other/luci-app-mosdns/mosdns
 		#;;
 		esac
 	;;
