@@ -112,7 +112,7 @@ EOF
 		#AddPackage iptvhelper riverscn openwrt-iptvhelper master
 		
 		#rm -r ${FEEDS_PKG}/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*}
-                rm -r ${FEEDS_PKG}/utils/v2dat
+                rm -r feeds/packages/utils/v2dat
                 #rm -r ${FEEDS_PKG}/lang/golang
 		rm -r ${FEEDS_PKG}/curl
 		#rm -r ${FEEDS_PKG}/msd_lite
