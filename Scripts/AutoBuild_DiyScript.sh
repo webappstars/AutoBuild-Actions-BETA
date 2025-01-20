@@ -101,7 +101,7 @@ EOF
 		rm -r ${FEEDS_PKG}/mosdns
 		rm -r ${FEEDS_LUCI}/luci-app-mosdns
 		rm -r ${FEEDS_LUCI}/luci-theme-argon*
-                rm -r ${FEEDS_LUCI}/luci-app-argon*-config
+                rm -r ${FEEDS_LUCI}/luci-app-argon-config
 		#AddPackage other vernesong OpenClash dev
 		AddPackage other jerrykuku luci-app-argon-config master 
 		AddPackage other sbwml luci-app-mosdns v5
