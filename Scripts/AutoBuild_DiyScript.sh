@@ -101,7 +101,7 @@ EOF
 		rm -r ${FEEDS_PKG}/mosdns
 		rm -r ${FEEDS_LUCI}/luci-app-mosdns
 		rm -r ${FEEDS_LUCI}/luci-theme-argon*
-                rm -rf feeds/luci/applications/luci-app-passwall
+                
                 #rm -r ${FEEDS_LUCI}/luci-app-argon-config
 		#AddPackage other vernesong OpenClash dev
 		AddPackage other jerrykuku luci-app-argon-config master 
@@ -114,7 +114,8 @@ EOF
 		
 		#rm -r ${FEEDS_PKG}/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*}
                 rm -r feeds/packages/utils/v2dat
-                #rm -r ${FEEDS_PKG}/lang/golang
+                rm -rf feeds/luci/applications/luci-app-passwall
+		#rm -r ${FEEDS_PKG}/lang/golang
 		rm -r ${FEEDS_PKG}/curl
 		#rm -r ${FEEDS_PKG}/msd_lite
                 
