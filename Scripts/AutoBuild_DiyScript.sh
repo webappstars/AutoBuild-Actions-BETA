@@ -114,7 +114,7 @@ EOF
 		
 		#rm -r ${FEEDS_PKG}/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*}
                 rm -r feeds/packages/utils/v2dat
-                rm -rf feeds/luci/applications/luci-app-passwall
+                #rm -rf feeds/luci/applications/luci-app-passwall
 		#rm -r ${FEEDS_PKG}/lang/golang
 		rm -r ${FEEDS_PKG}/curl
 		#rm -r ${FEEDS_PKG}/msd_lite
