@@ -11,8 +11,10 @@ CONFIG_KERNEL_IPV6=y
 CONFIG_PACKAGE_ipv6helper=y
 CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
 CONFIG_PACKAGE_6in4=y
-
-
+CONFIG_PACKAGE_ip6tables-extra=y
+CONFIG_PACKAGE_ip6tables-mod-nat=y
+CONFIG_PACKAGE_odhcp6c=y
+CONFIG_PACKAGE_odhcpd-ipv6only=y
 
 # LUCI Appliciations
 # CONFIG_PACKAGE_luci-app-mwan3helper-chinaroute is not set
