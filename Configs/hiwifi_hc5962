@@ -13,7 +13,7 @@ CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
 CONFIG_PACKAGE_6in4=y
 CONFIG_PACKAGE_iptables-mod-socket=y
 CONFIG_PACKAGE_iptables-mod-iprange=y
-
+CONFIG_PACKAGE_iptables-mod-conntrack-extra=y
 
 # LUCI Appliciations
 # CONFIG_PACKAGE_luci-app-mwan3helper-chinaroute is not set
