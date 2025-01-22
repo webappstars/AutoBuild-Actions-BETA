@@ -100,13 +100,13 @@ Firmware_Diy() {
 		# git reset --hard 1627fd2c745e496134834a8fb8145ba0aa458ae9
 		#rm -r ${FEEDS_PKG}/mosdns
 		#rm -r ${FEEDS_LUCI}/luci-app-mosdns
-		rm -r ${FEEDS_LUCI}/luci-theme-argon*
+		#rm -r ${FEEDS_LUCI}/luci-theme-argon*
                 rm -r feeds/other/lean/luci-app-turboacc
                 #rm -r ${FEEDS_LUCI}/luci-app-argon-config
 		#AddPackage other vernesong OpenClash dev
-		AddPackage other jerrykuku luci-app-argon-config master 
+		#AddPackage other jerrykuku luci-app-argon-config master 
 		#AddPackage other sbwml luci-app-mosdns v5
-		AddPackage themes jerrykuku luci-theme-argon master
+		#AddPackage themes jerrykuku luci-theme-argon master
 		curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
                 #AddPackage themes thinktip luci-theme-neobird main
 		#AddPackage msd_lite ximiTech luci-app-msd_lite main
