@@ -101,13 +101,14 @@ EOF
 		rm -r ${FEEDS_PKG}/mosdns
 		rm -r ${FEEDS_LUCI}/luci-app-mosdns
 		rm -r ${FEEDS_LUCI}/luci-theme-argon*
-                rm -r ${FEEDS_LUCI}/luci-app-passwall
+                rm -r feeds/other/lean/luci-app-turboacc
                 #rm -r ${FEEDS_LUCI}/luci-app-argon-config
 		#AddPackage other vernesong OpenClash dev
 		AddPackage other jerrykuku luci-app-argon-config master 
 		AddPackage other sbwml luci-app-mosdns v5
 		AddPackage themes jerrykuku luci-theme-argon master
-		#AddPackage themes thinktip luci-theme-neobird main
+		curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+                #AddPackage themes thinktip luci-theme-neobird main
 		#AddPackage msd_lite ximiTech luci-app-msd_lite main
 		#AddPackage msd_lite ximiTech msd_lite main
 		#AddPackage iptvhelper riverscn openwrt-iptvhelper master
@@ -169,8 +170,8 @@ EOF
 			AddPackage passwall-luci xiaorouji openwrt-passwall main
 		;;
                 hc5962)
-			AddPackage passwall xiaorouji openwrt-passwall-packages main
-			AddPackage passwall-luci xiaorouji openwrt-passwall main
+			# AddPackage passwall xiaorouji openwrt-passwall-packages main
+			# AddPackage passwall-luci xiaorouji openwrt-passwall main
 
 			mosdns_version="5.3.3"
 			wget --quiet --no-check-certificate -P /tmp \
