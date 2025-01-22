@@ -98,14 +98,14 @@ Firmware_Diy() {
 		# sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase="/luci-static/argon-mod"' $(PKG_Finder d package default-settings)/files/zzz-default-settings
 		#sed -i "s?openwrt-23.05?master?g" ${FEEDS_CONF}
 		# git reset --hard 1627fd2c745e496134834a8fb8145ba0aa458ae9
-		rm -r ${FEEDS_PKG}/mosdns
-		rm -r ${FEEDS_LUCI}/luci-app-mosdns
+		#rm -r ${FEEDS_PKG}/mosdns
+		#rm -r ${FEEDS_LUCI}/luci-app-mosdns
 		rm -r ${FEEDS_LUCI}/luci-theme-argon*
                 rm -r feeds/other/lean/luci-app-turboacc
                 #rm -r ${FEEDS_LUCI}/luci-app-argon-config
 		#AddPackage other vernesong OpenClash dev
 		AddPackage other jerrykuku luci-app-argon-config master 
-		AddPackage other sbwml luci-app-mosdns v5
+		#AddPackage other sbwml luci-app-mosdns v5
 		AddPackage themes jerrykuku luci-theme-argon master
 		curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
                 #AddPackage themes thinktip luci-theme-neobird main
@@ -169,20 +169,20 @@ Firmware_Diy() {
 			AddPackage passwall-depends xiaorouji openwrt-passwall-packages main
 			AddPackage passwall-luci xiaorouji openwrt-passwall main
 		;;
-                hc5962)
+                #hc5962)
 			# AddPackage passwall xiaorouji openwrt-passwall-packages main
 			# AddPackage passwall-luci xiaorouji openwrt-passwall main
 
-			mosdns_version="5.3.3"
-			wget --quiet --no-check-certificate -P /tmp \
-				https://github.com/IrineSistiana/mosdns/releases/download/v${mosdns_version}/mosdns-linux-mipsle-softfloat.zip
-			unzip /tmp/mosdns-linux-mipsle-softfloat.zip -d /tmp
-			Copy /tmp/mosdns ${BASE_FILES}/usr/bin
-			chmod +x ${BASE_FILES}/usr/bin
-			sed -i "s?+mosdns ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
-			sed -i "s?+v2ray-geoip ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
-			sed -i "s?+v2ray-geosite ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
-			rm -r ${WORK}/package/other/luci-app-mosdns/mosdns
+			#mosdns_version="5.3.3"
+			#wget --quiet --no-check-certificate -P /tmp \
+				#https://github.com/IrineSistiana/mosdns/releases/download/v${mosdns_version}/mosdns-linux-mipsle-softfloat.zip
+			#unzip /tmp/mosdns-linux-mipsle-softfloat.zip -d /tmp
+			#Copy /tmp/mosdns ${BASE_FILES}/usr/bin
+			#chmod +x ${BASE_FILES}/usr/bin
+			#sed -i "s?+mosdns ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
+			#sed -i "s?+v2ray-geoip ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
+			#sed -i "s?+v2ray-geosite ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
+			#rm -r ${WORK}/package/other/luci-app-mosdns/mosdns
 		#;;
 		esac
 	;;
