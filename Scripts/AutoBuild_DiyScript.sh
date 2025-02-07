@@ -101,8 +101,8 @@ Firmware_Diy() {
 		#rm -r ${FEEDS_PKG}/mosdns
 		#rm -r ${FEEDS_LUCI}/luci-app-mosdns
 		#rm -r ${FEEDS_LUCI}/luci-theme-argon*
-                rm -r feeds/other/lean/luci-app-turboacc
-		rm -r feeds/luci/applications/luci-app-smartdns
+                #rm -r feeds/other/lean/luci-app-turboacc
+		
                 #rm -r ${FEEDS_LUCI}/luci-app-argon-config
 		#AddPackage other vernesong OpenClash dev
 		#AddPackage other jerrykuku luci-app-argon-config master 
