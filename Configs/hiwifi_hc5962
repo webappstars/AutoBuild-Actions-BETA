@@ -4,9 +4,9 @@ CONFIG_TARGET_ramips_mt7621_DEVICE_hiwifi_hc5962=y
 
 # CONFIG_SIGNATURE_CHECK is not set
 # CONFIG_SIGNED_PACKAGES is not set
+CONFIG_PACKAGE_dnsmasq_full=y
 
-
-
+# CONFIG_PACKAGE_dnsmasq is not set
 
 
 # LUCI Appliciations
