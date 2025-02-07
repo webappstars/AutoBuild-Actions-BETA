@@ -97,7 +97,8 @@ Firmware_Diy() {
 		# sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 		# sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase="/luci-static/argon-mod"' $(PKG_Finder d package default-settings)/files/zzz-default-settings
 		#sed -i "s?openwrt-23.05?master?g" ${FEEDS_CONF}
-		sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+		sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+                sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
                 # git reset --hard 1627fd2c745e496134834a8fb8145ba0aa458ae9
 		#rm -r ${FEEDS_PKG}/mosdns
 		#rm -r ${FEEDS_LUCI}/luci-app-mosdns
