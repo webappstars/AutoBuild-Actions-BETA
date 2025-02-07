@@ -75,7 +75,7 @@ Firmware_Diy() {
 	# merge_package <git_branch> <git_repo_url> <package_path> <target_path>..
 	
 	case "${OP_AUTHOR}/${OP_REPO}:${OP_BRANCH}" in
-	webappstars/openwrt_Lienol:24.10)
+	openwrt/openwrt:main)
 		#cat >> ${Version_File} <<EOF
 #sed -i '/check_signature/d' /etc/opkg.conf
 #if [ -z "\$(grep "REDIRECT --to-ports 53" /etc/firewall.user 2> /dev/null)" ]
