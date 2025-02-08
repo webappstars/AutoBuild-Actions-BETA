@@ -127,7 +127,7 @@ Firmware_Diy() {
 		case "${TARGET_BOARD}" in
 		ramips)
 			sed -i "/DEVICE_COMPAT_VERSION := 1.1/d" target/linux/ramips/image/mt7621.mk
-			# Copy ${CustomFiles}/Depends/automount $(PKG_Finder d "package" automount)/files 15-automount
+			Copy ${CustomFiles}/Depends/automount $(PKG_Finder d "package" automount)/files 15-automount
 		;;
 		esac
 
