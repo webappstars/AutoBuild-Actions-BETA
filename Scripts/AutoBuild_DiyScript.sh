@@ -105,7 +105,7 @@ Firmware_Diy() {
                 #rm -r feeds/other/lean/luci-app-turboacc
 		
                 #rm -r ${FEEDS_LUCI}/luci-app-argon-config
-		#AddPackage other vernesong OpenClash dev
+		AddPackage other UnblockNeteaseMusic luci-app-unblockneteasemusic js
 		#AddPackage other jerrykuku luci-app-argon-config master 
 		AddPackage other sbwml luci-app-mosdns v5
 		#AddPackage themes jerrykuku luci-theme-argon master
