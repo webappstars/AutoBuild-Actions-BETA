@@ -109,7 +109,9 @@ Firmware_Diy() {
 		AddPackage other jerrykuku luci-app-argon-config master 
 		AddPackage other sbwml luci-app-mosdns v5
 		AddPackage themes jerrykuku luci-theme-argon master
-		#curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+		 
+  
+                #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
                 #AddPackage themes thinktip luci-theme-neobird main
 		#AddPackage msd_lite ximiTech luci-app-msd_lite main
 		#AddPackage msd_lite ximiTech msd_lite main
@@ -117,6 +119,8 @@ Firmware_Diy() {
 		
 		#rm -r ${FEEDS_PKG}/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*}
                 rm -r feeds/packages/utils/v2dat
+		rm -r feeds/packages/net/v2ray-geodata/Makefile
+                git clone https://github.com/sbwml/v2ray-geodata ${FEEDS_PKG}/net/v2ray-geodata
                 #rm -rf feeds/luci/applications/luci-app-passwall
 		#rm -r ${FEEDS_PKG}/lang/golang
 		#rm -r ${FEEDS_PKG}/curl
