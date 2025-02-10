@@ -101,7 +101,7 @@ Firmware_Diy() {
                 # git reset --hard 1627fd2c745e496134834a8fb8145ba0aa458ae9
 		rm -r ${FEEDS_PKG}/mosdns
 		rm -r ${FEEDS_LUCI}/luci-app-mosdns
-		rm -r package/themes/luci-theme-argon
+		rm -r ${FEEDS_LUCI}/luci-theme-argon
                 #rm -r feeds/other/lean/luci-app-turboacc
 		
                 #rm -r ${FEEDS_LUCI}/luci-app-argon-config
