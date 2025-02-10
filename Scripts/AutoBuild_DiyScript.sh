@@ -194,6 +194,7 @@ Firmware_Diy() {
                                https://github.com/XTLS/Xray-core/releases/download/v{xray_version}/Xray-linux-mips32le.zip
                         unzip /tmp/Xray-linux-mips32le.zip xray_softfloat -d /tmp
 			mv /tmp/xray_softfloat ${BASE_FILES}/usr/bin/xray
+                        chmod +x ${BASE_FILES}/usr/bin
                ;;
 		esac
 	;;
