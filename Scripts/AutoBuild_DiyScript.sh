@@ -128,18 +128,18 @@ Firmware_Diy() {
                 
 		#Copy ${CustomFiles}/curl ${FEEDS_PKG}
 		
-		#case "${TARGET_BOARD}" in
-		#ramips)
+		case "${TARGET_BOARD}" in
+		ramips)
 			#sed -i "/DEVICE_COMPAT_VERSION := 1.1/d" target/linux/ramips/image/mt7621.mk
 			#Copy ${CustomFiles}/Depends/automount $(PKG_Finder d "package" automount)/files 15-automount
-		#;;
-		#esac
+		;;
+		esac
 
-		#case "${CONFIG_FILE}" in
-		#d-team_newifi-d2-Clash | xiaoyu_xy-c5-Clash)
-			#ClashDL mipsle-hardfloat tun
-		#;;
-		#esac
+		case "${CONFIG_FILE}" in
+		d-team_newifi-d2-Clash | xiaoyu_xy-c5-Clash)
+			ClashDL mipsle-hardfloat tun
+		;;
+		esac
 			
 		case "${TARGET_PROFILE}" in
 		d-team_newifi-d2)
