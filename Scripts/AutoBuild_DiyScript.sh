@@ -175,7 +175,7 @@ Firmware_Diy() {
 			AddPackage passwall-depends xiaorouji openwrt-passwall-packages main
 			AddPackage passwall-luci xiaorouji openwrt-passwall main
 		;;
-                hc5962)
+                hiwifi_hc5962)
 			# AddPackage passwall xiaorouji openwrt-passwall-packages main
 			# AddPackage passwall-luci xiaorouji openwrt-passwall main
 
