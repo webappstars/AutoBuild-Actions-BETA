@@ -109,6 +109,7 @@ Firmware_Diy() {
 		AddPackage other jerrykuku luci-app-argon-config master 
 		AddPackage other sbwml luci-app-mosdns v5
 		AddPackage themes jerrykuku luci-theme-argon master
+                AddPackage other sbwml v2ray-geodata master
 		 
   
                 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
@@ -119,8 +120,8 @@ Firmware_Diy() {
 		
 		#rm -r ${FEEDS_PKG}/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*}
                 rm -r feeds/packages/utils/v2dat
-		rm -r feeds/packages/net/v2ray-geodata/Makefile
-                git clone https://github.com/sbwml/v2ray-geodata ${FEEDS_PKG}/net/v2ray-geodata
+		rm -r feeds/packages/net/v2ray-geodata
+                #git clone https://github.com/sbwml/v2ray-geodata ${FEEDS_PKG}/net/v2ray-geodata
                 #rm -rf feeds/luci/applications/luci-app-passwall
 		#rm -r ${FEEDS_PKG}/lang/golang
 		#rm -r ${FEEDS_PKG}/curl
@@ -193,7 +194,7 @@ Firmware_Diy() {
                         wget --quiet --no-check-certificate -P /tmp \
                                https://github.com/XTLS/Xray-core/releases/download/v{xray_version}/Xray-linux-mips32le.zip
                         unzip /tmp/Xray-linux-mips32le.zip -d /tmp
-			Copy /tmp/xray_softfloat ${BASE_FILES}/usr/bin/xray
+			mv /tmp/xray_softfloat ${BASE_FILES}/usr/bin/xray
                         chmod +x ${BASE_FILES}/usr/bin/xray
 			
                ;;
