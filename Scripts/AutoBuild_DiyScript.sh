@@ -135,8 +135,9 @@ Firmware_Diy() {
 			#Copy ${CustomFiles}/Depends/automount $(PKG_Finder d "package" automount)/files 15-automount
                                                 wget --quiet --no-check-certificate -P /tmp \
                                https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-mips32le.zip
-                        unzip /tmp/Xray-linux-mips32le.zip -d /tmp 
-			cp /tmp/xray_softfloat ${BASE_FILES}/usr/bin xray		
+                        unzip /tmp/Xray-linux-mips32le.zip xray_softfloat -d /tmp 
+			mv /tmp/xray_softfloat /tmp/xray
+                        cp /tmp/xray ${BASE_FILES}/usr/bin		
   
   ;;
 		esac
