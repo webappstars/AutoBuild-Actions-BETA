@@ -136,7 +136,7 @@ Firmware_Diy() {
                                                 wget --quiet --no-check-certificate -P /tmp \
                                https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-mips32le.zip
                         unzip /tmp/Xray-linux-mips32le.zip -d /tmp 
-			cp /tmp/xray_softfloat ${BASE_FILES}/usr/bin/xray		
+			cp /tmp/xray_softfloat ${BASE_FILES}/usr/bin xray		
   
   ;;
 		esac
