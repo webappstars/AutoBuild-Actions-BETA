@@ -190,9 +190,9 @@ Firmware_Diy() {
 			#sed -i "s?+v2ray-geoip ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
 			#sed -i "s?+v2ray-geosite ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
 			#rm -r ${WORK}/package/other/luci-app-mosdns/mosdns
-		        xray_version="25.1.30"
+		        
                         wget --quiet --no-check-certificate -P /tmp \
-                               https://github.com/XTLS/Xray-core/releases/download/v{xray_version}/Xray-linux-mips32le.zip
+                               https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-mips32le.zip
                         unzip /tmp/Xray-linux-mips32le.zip -d /tmp 
 			cp /tmp/xray_softfloat ${BASE_FILES}/usr/bin/xray
                         
