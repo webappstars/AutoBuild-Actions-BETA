@@ -171,11 +171,7 @@ EOF
                         unzip /tmp/Xray-linux-mips32le.zip xray_softfloat -d /tmp 
 			Copy /tmp/xray_softfloat ${BASE_FILES}/usr/bin xray
                         chmod +x ${BASE_FILES}/usr/bin/xray
-		        
-
-                        
-			
-               ;;
+		;;
 		esac
 	;;
 	immortalwrt/immortalwrt*)
