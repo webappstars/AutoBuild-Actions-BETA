@@ -98,7 +98,7 @@ EOF
 		# sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase="/luci-static/argon-mod"' $(PKG_Finder d package default-settings)/files/zzz-default-settings
 		#sed -i "s?openwrt-23.05?master?g" ${FEEDS_CONF}
 		
-                git reset --hard 1627fd2c745e496134834a8fb8145ba0aa458ae9
+                # git reset --hard 1627fd2c745e496134834a8fb8145ba0aa458ae9
 		rm -r ${FEEDS_PKG}/mosdns
 		rm -r ${FEEDS_LUCI}/luci-app-mosdns
 		rm -r ${FEEDS_LUCI}/luci-theme-argon*
@@ -106,9 +106,9 @@ EOF
 		
                 #rm -r ${FEEDS_LUCI}/luci-app-argon-config
 		
-		AddPackage other jerrykuku luci-app-argon-config 18.06 
+		AddPackage other jerrykuku luci-app-argon-config master 
 		AddPackage other sbwml luci-app-mosdns v5
-		AddPackage themes jerrykuku luci-theme-argon 18.06
+		AddPackage themes jerrykuku luci-theme-argon master
                 AddPackage other sbwml v2ray-geodata master
 		 
   
@@ -133,11 +133,7 @@ EOF
 		ramips)
 			#sed -i "/DEVICE_COMPAT_VERSION := 1.1/d" target/linux/ramips/image/mt7621.mk
 			#Copy ${CustomFiles}/Depends/automount $(PKG_Finder d "package" automount)/files 15-automount
-                                                wget --quiet --no-check-certificate -P /tmp \
-                               https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-mips32le.zip
-                        unzip /tmp/Xray-linux-mips32le.zip xray_softfloat -d /tmp 
-			Copy /tmp/xray_softfloat ${BASE_FILES}/usr/bin xray
-                        chmod +x ${BASE_FILES}/usr/bin/xray	
+                                                	
   
   ;;
 		esac
@@ -170,6 +166,11 @@ EOF
 			#sed -i "s?+v2ray-geoip ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
 			#sed -i "s?+v2ray-geosite ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
 			#rm -r ${WORK}/package/other/luci-app-mosdns/mosdns
+                        wget --quiet --no-check-certificate -P /tmp \
+                               https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-mips32le.zip
+                        unzip /tmp/Xray-linux-mips32le.zip xray_softfloat -d /tmp 
+			Copy /tmp/xray_softfloat ${BASE_FILES}/usr/bin xray
+                        chmod +x ${BASE_FILES}/usr/bin/xray
 		        
 
                         
