@@ -112,14 +112,6 @@ Firmware_Diy() {
                 rm -rf feeds/packages/utils/v2dat
                 rm -rf feeds/packages/lang/golang
                 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
-		
-                ./scripts/feeds update nas nas_luci kenzo small
-		./scripts/feeds install -a -p nas
-                ./scripts/feeds install -a -p nas_luci
-		./scripts/feeds install -a -p kenzo
-                ./scripts/feeds install -a -p small
-                
-                
 		#rm -r ${FEEDS_LUCI}/luci-app-argon-config
 		
 		#AddPackage other jerrykuku luci-app-argon-config master 
