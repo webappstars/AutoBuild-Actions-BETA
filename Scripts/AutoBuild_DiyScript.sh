@@ -93,7 +93,8 @@ Firmware_Diy() {
 #fi
 #exit 0
 #EOF
-		sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+		sed -i '/^#src-git luci https:\/\/github.com\/coolsnowwolf\/luci$/s/^#//' feeds.conf.default && sed -i '/^src-git luci https:\/\/github.com\/coolsnowwolf\/luci\.git;openwrt-23\.05$/s/^/#/' feeds.conf.default
+                sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
                 sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
                 # sed -i "s?/bin/login?/usr/libexec/login.sh?g" ${FEEDS_PKG}/ttyd/files/ttyd.config
 		# sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
