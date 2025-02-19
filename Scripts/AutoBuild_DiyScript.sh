@@ -111,7 +111,9 @@ Firmware_Diy() {
 		#rm -r ${FEEDS_PKG}/smartdns
                 rm -r ${FEEDS_LUCI}/luci-app-mosdns
                 rm -r ${FEEDS_LUCI}/luci-app-smartdns
-		#rm -r ${FEEDS_LUCI}/luci-theme-argon*
+		rm -r ${FEEDS_LUCI}/luci-app-uugamebooster
+                       
+                #rm -r ${FEEDS_LUCI}/luci-theme-argon*
                 #rm -r feeds/other/lean/luci-app-turboacc
 		rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
                 rm -rf feeds/packages/utils/v2dat
