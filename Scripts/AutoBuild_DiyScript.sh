@@ -102,9 +102,10 @@ Firmware_Diy() {
 		# git reset --hard d49a28094294a731462661e3e00c59b4f4b5aa5a
 		#rm -r ${FEEDS_PKG}/mosdns
 		#rm -r ${FEEDS_PKG}/smartdns
-                rm -r ${FEEDS_LUCI}/luci-app-mosdns
-                rm -r ${FEEDS_LUCI}/luci-app-smartdns
-		rm -r ${FEEDS_LUCI}/luci-app-uugamebooster
+                rm -rf ${FEEDS_LUCI}/luci-app-mosdns
+                rm -rf ${FEEDS_LUCI}/luci-app-smartdns
+		rm -rf ${FEEDS_LUCI}/luci-app-uugamebooster
+                
                        
                 #rm -r ${FEEDS_LUCI}/luci-theme-argon*
                 #rm -r feeds/other/lean/luci-app-turboacc
