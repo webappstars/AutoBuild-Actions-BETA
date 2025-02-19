@@ -188,11 +188,13 @@ Firmware_Diy() {
 		x86_64)
 			sed -i -- 's:/bin/ash:'/bin/bash':g' ${BASE_FILES}/etc/passwd
 			case "${CONFIG_FILE}" in
-			x86_64-Next)
+			x86_64)
 				# sed -i "s?/bin/login?/usr/libexec/login.sh?g" ${FEEDS_PKG}/ttyd/files/ttyd.config
 				AddPackage passwall xiaorouji openwrt-passwall main
 				# AddPackage passwall xiaorouji openwrt-passwall2 main
 				rm -r ${FEEDS_LUCI}/luci-app-passwall
+				AddPackage other WROIATE luci-app-socat main
+    				rm -r ${FEEDS_LUCI}/luci-app-socat
 				AddPackage other sbwml luci-app-mosdns v5
 				mosdns_version="5.3.3"
 				wget --quiet --no-check-certificate -P /tmp \
