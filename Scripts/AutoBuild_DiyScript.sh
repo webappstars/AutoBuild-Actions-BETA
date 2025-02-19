@@ -93,23 +93,42 @@ Firmware_Diy() {
 #fi
 #exit 0
 #EOF
-		# sed -i "s?/bin/login?/usr/libexec/login.sh?g" ${FEEDS_PKG}/ttyd/files/ttyd.config
+		sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+                sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
+                # sed -i "s?/bin/login?/usr/libexec/login.sh?g" ${FEEDS_PKG}/ttyd/files/ttyd.config
 		# sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 		# sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase="/luci-static/argon-mod"' $(PKG_Finder d package default-settings)/files/zzz-default-settings
 		#sed -i "s?openwrt-23.05?master?g" ${FEEDS_CONF}
+
+                echo >> feeds.conf.default
+                echo 'src-git nas https://github.com/linkease/nas-packages.git;master' >> feeds.conf.default
+                echo 'src-git nas_luci https://github.com/linkease/nas-packages-luci.git;main' >> feeds.conf.default
 		                 
-                git reset --hard d49a28094294a731462661e3e00c59b4f4b5aa5a
-		rm -r ${FEEDS_PKG}/mosdns
-		rm -r ${FEEDS_LUCI}/luci-app-mosdns
-		rm -r ${FEEDS_LUCI}/luci-theme-argon*
+                # git reset --hard d49a28094294a731462661e3e00c59b4f4b5aa5a
+		#rm -r ${FEEDS_PKG}/mosdns
+		#rm -r ${FEEDS_PKG}/smartdns
+                rm -r ${FEEDS_LUCI}/luci-app-mosdns
+                rm -r ${FEEDS_LUCI}/luci-app-smartdns
+		#rm -r ${FEEDS_LUCI}/luci-theme-argon*
                 #rm -r feeds/other/lean/luci-app-turboacc
+		rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
+                rm -rf feeds/packages/utils/v2dat
+                rm -rf feeds/packages/lang/golang
+                git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 		
-                #rm -r ${FEEDS_LUCI}/luci-app-argon-config
+                ./scripts/feeds update nas nas_luci kenzo small
+		./scripts/feeds install -a -p nas
+                ./scripts/feeds install -a -p nas_luci
+		./scripts/feeds install -a -p kenzo
+                ./scripts/feeds install -a -p small
+                
+                
+		#rm -r ${FEEDS_LUCI}/luci-app-argon-config
 		
-		AddPackage other jerrykuku luci-app-argon-config master 
-		AddPackage other sbwml luci-app-mosdns v5
-		AddPackage themes jerrykuku luci-theme-argon master
-                AddPackage other sbwml v2ray-geodata master
+		#AddPackage other jerrykuku luci-app-argon-config master 
+		#AddPackage other sbwml luci-app-mosdns v5
+		#AddPackage themes jerrykuku luci-theme-argon master
+                #AddPackage other sbwml v2ray-geodata master
 		 
   
                 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
@@ -119,8 +138,8 @@ Firmware_Diy() {
 		#AddPackage iptvhelper riverscn openwrt-iptvhelper master
 		
 		#rm -r ${FEEDS_PKG}/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*}
-                rm -r feeds/packages/utils/v2dat
-		rm -r feeds/packages/net/v2ray-geodata
+                #rm -r feeds/packages/utils/v2dat
+		#rm -r feeds/packages/net/v2ray-geodata
                 #git clone https://github.com/sbwml/v2ray-geodata ${FEEDS_PKG}/net/v2ray-geodata
                 #rm -rf feeds/luci/applications/luci-app-passwall
 		#rm -r ${FEEDS_PKG}/lang/golang
