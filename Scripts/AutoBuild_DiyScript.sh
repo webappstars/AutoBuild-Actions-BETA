@@ -75,7 +75,7 @@ Firmware_Diy() {
 	# merge_package <git_branch> <git_repo_url> <package_path> <target_path>..
 	
 	case "${OP_AUTHOR}/${OP_REPO}:${OP_BRANCH}" in
-	webappstars/myde:master)
+	webappstars/immortalwrt:master)
 		#cat >> ${Version_File} <<EOF
 #sed -i '/check_signature/d' /etc/opkg.conf
 #if [ -z "\$(grep "REDIRECT --to-ports 53" /etc/firewall.user 2> /dev/null)" ]
@@ -102,14 +102,14 @@ Firmware_Diy() {
 		# git reset --hard d49a28094294a731462661e3e00c59b4f4b5aa5a
 		#rm -r ${FEEDS_PKG}/mosdns
 		#rm -r ${FEEDS_PKG}/smartdns
-                rm -rf ${FEEDS_LUCI}/luci-app-mosdns
+                rm -rf ${FEEDS_LUCI}/luci-app-passwall
                 rm -rf ${FEEDS_LUCI}/luci-app-smartdns
 		rm -rf ${FEEDS_LUCI}/luci-app-uugamebooster
                 
                        
                 #rm -r ${FEEDS_LUCI}/luci-theme-argon*
                 #rm -r feeds/other/lean/luci-app-turboacc
-		rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns,uugamebooster}
+		rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,smartdns,uugamebooster}
                 rm -rf feeds/packages/utils/v2dat
                 rm -rf feeds/packages/lang/golang
                 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
@@ -175,11 +175,11 @@ Firmware_Diy() {
 			#sed -i "s?+v2ray-geoip ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
 			#sed -i "s?+v2ray-geosite ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
 			#rm -r ${WORK}/package/other/luci-app-mosdns/mosdns
-                        wget --quiet --no-check-certificate -P /tmp \
-                               https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-mips32le.zip
-                        unzip /tmp/Xray-linux-mips32le.zip xray_softfloat -d /tmp 
-			Copy /tmp/xray_softfloat ${BASE_FILES}/usr/bin xray
-                        chmod +x ${BASE_FILES}/usr/bin/xray
+                        #wget --quiet --no-check-certificate -P /tmp \
+                               #https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-mips32le.zip
+                        #unzip /tmp/Xray-linux-mips32le.zip xray_softfloat -d /tmp 
+			#Copy /tmp/xray_softfloat ${BASE_FILES}/usr/bin xray
+                        #chmod +x ${BASE_FILES}/usr/bin/xray
 		;;
 		esac
 	;;
