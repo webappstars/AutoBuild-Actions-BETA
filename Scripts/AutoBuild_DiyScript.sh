@@ -102,15 +102,15 @@ Firmware_Diy() {
 		# git reset --hard d49a28094294a731462661e3e00c59b4f4b5aa5a
 		#rm -r ${FEEDS_PKG}/mosdns
 		#rm -r ${FEEDS_PKG}/smartdns
-                rm -rf ${FEEDS_LUCI}/luci-app-passwall
-                rm -rf ${FEEDS_LUCI}/luci-app-smartdns
+                #rm -rf ${FEEDS_LUCI}/luci-app-passwall
+                #rm -rf ${FEEDS_LUCI}/luci-app-smartdns
 		
                 
                        
                 #rm -r ${FEEDS_LUCI}/luci-theme-argon*
                 #rm -r feeds/other/lean/luci-app-turboacc
-		rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2raya*,smartdns,uugamebooster,shadowsocks-libev,shadowsocks-rust}
-                rm -rf feeds/packages/utils/v2dat
+		rm -rf feeds/packages/net/{xray*,v2ray*,smartdns}
+                #rm -rf feeds/packages/utils/v2dat
                 rm -rf feeds/packages/lang/golang
                 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 		#rm -r ${FEEDS_LUCI}/luci-app-argon-config
