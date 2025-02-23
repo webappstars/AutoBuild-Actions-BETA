@@ -75,7 +75,7 @@ Firmware_Diy() {
 	# merge_package <git_branch> <git_repo_url> <package_path> <target_path>..
 	
 	case "${OP_AUTHOR}/${OP_REPO}:${OP_BRANCH}" in
-	webappstars/immortalwrt:master)
+	padavanonly/immortalwrt:master)
 		#cat >> ${Version_File} <<EOF
 #sed -i '/check_signature/d' /etc/opkg.conf
 #if [ -z "\$(grep "REDIRECT --to-ports 53" /etc/firewall.user 2> /dev/null)" ]
@@ -109,7 +109,7 @@ Firmware_Diy() {
                        
                 #rm -r ${FEEDS_LUCI}/luci-theme-argon*
                 #rm -r feeds/other/lean/luci-app-turboacc
-		rm -rf feeds/packages/net/{xray*,v2ray*,smartdns}
+		#rm -rf feeds/packages/net/{xray*,v2ray*,smartdns}
                 #rm -rf feeds/packages/utils/v2dat
                 rm -rf feeds/packages/lang/golang
                 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
@@ -162,9 +162,13 @@ Firmware_Diy() {
 			AddPackage passwall-luci xiaorouji openwrt-passwall main
 		;;
                 hiwifi_hc5962)
-			# AddPackage passwall xiaorouji openwrt-passwall-packages main
-			# AddPackage passwall-luci xiaorouji openwrt-passwall main
-
+                        rm -r ${FEEDS_LUCI}/luci-app-passwall			
+                        find ${WORK}/package/ | grep Makefile | grep xray | xargs rm -f
+			find ${WORK}/package/ | grep Makefile | grep sing-box | xargs rm -f
+                        AddPackage passwall xiaorouji openwrt-passwall-packages main
+			AddPackage passwall-luci xiaorouji openwrt-passwall main
+                        patch < ${CustomFiles}/mt7981/0001-Add-iptables-socket.patch -p1 -d ${WORK}
+			rm -r ${FEEDS_LUCI}/luci-app-passwall
 			#mosdns_version="5.3.3"
 			#wget --quiet --no-check-certificate -P /tmp \
 				#https://github.com/IrineSistiana/mosdns/releases/download/v${mosdns_version}/mosdns-linux-mipsle-softfloat.zip
