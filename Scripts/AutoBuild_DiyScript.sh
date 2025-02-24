@@ -167,12 +167,11 @@ Firmware_Diy() {
 			rm -r feeds/packages/net/xray-core
 			find ${WORK}/package/ | grep Makefile | grep smartdns | xargs rm -f
 			find ${WORK}/package/ | grep Makefile | grep sing-box | xargs rm -f
-                        AddPackage passwall xiaorouji openwrt-passwall-packages main
-			AddPackage passwall-luci xiaorouji openwrt-passwall main
-                        AddPackage other pymumu luci-app-smartdns lede
-			AddPackage other pymumu openwrt-smartdns master
-                        patch < ${CustomFiles}/mt7981/0001-Add-iptables-socket.patch -p1 -d ${WORK}
-			rm -r ${FEEDS_LUCI}/luci-app-passwall
+                        AddPackage kenzo kenzok8 openwrt-packages master
+			AddPackage small kenzok8 small master
+                        
+			patch < ${CustomFiles}/mt7981/0001-Add-iptables-socket.patch -p1 -d ${WORK}
+			
 			#mosdns_version="5.3.3"
 			#wget --quiet --no-check-certificate -P /tmp \
 				#https://github.com/IrineSistiana/mosdns/releases/download/v${mosdns_version}/mosdns-linux-mipsle-softfloat.zip
