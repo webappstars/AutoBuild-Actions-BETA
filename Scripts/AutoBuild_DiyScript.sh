@@ -169,6 +169,8 @@ Firmware_Diy() {
 			find ${WORK}/package/ | grep Makefile | grep sing-box | xargs rm -f
                         AddPackage passwall xiaorouji openwrt-passwall-packages main
 			AddPackage passwall-luci xiaorouji openwrt-passwall main
+                        AddPackage other pymumu luci-app-smartdns lede
+			AddPackage other pymumu openwrt-smartdns master
                         patch < ${CustomFiles}/mt7981/0001-Add-iptables-socket.patch -p1 -d ${WORK}
 			rm -r ${FEEDS_LUCI}/luci-app-passwall
 			#mosdns_version="5.3.3"
