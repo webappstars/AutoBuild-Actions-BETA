@@ -163,7 +163,7 @@ Firmware_Diy() {
 		;;
                 hiwifi_hc5962)
                         rm -r feeds/luci/applications/luci-app-passwall			
-                        find ${WORK}/package/ | grep Makefile | grep xray | xargs rm -f
+                        find ${WORK}/package/ | grep Makefile | grep xray-core | xargs rm -f
 			find ${WORK}/package/ | grep Makefile | grep sing-box | xargs rm -f
                         AddPackage passwall xiaorouji openwrt-passwall-packages main
 			AddPackage passwall-luci xiaorouji openwrt-passwall main
