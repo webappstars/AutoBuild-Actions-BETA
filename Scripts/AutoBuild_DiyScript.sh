@@ -75,7 +75,7 @@ Firmware_Diy() {
 	# merge_package <git_branch> <git_repo_url> <package_path> <target_path>..
 	
 	case "${OP_AUTHOR}/${OP_REPO}:${OP_BRANCH}" in
-	webappstars/immortalwrt:master)
+	webappstars/myde:master)
 		#cat >> ${Version_File} <<EOF
 #sed -i '/check_signature/d' /etc/opkg.conf
 #if [ -z "\$(grep "REDIRECT --to-ports 53" /etc/firewall.user 2> /dev/null)" ]
@@ -164,15 +164,16 @@ Firmware_Diy() {
                 hiwifi_hc5962)
                         rm -r feeds/luci/applications/luci-app-passwall			
                         rm -r feeds/luci/applications/luci-app-smartdns
-			rm -r feeds/packages/net/xray-core
+			rm -r feeds/luci/applications/luci-app-mosdns
+                        rm -r feeds/packages/net/xray-core
 			rm -r feeds/packages/net/smartdns
                         rm -r feeds/packages/net/chinadns-ng
-			#find ${WORK}/package/ | grep Makefile | grep smartdns | xargs rm -f
+		        find ${WORK}/package/ | grep Makefile | grep mosdns | xargs rm -f
 			find ${WORK}/package/ | grep Makefile | grep sing-box | xargs rm -f
                         AddPackage kenzo kenzok8 openwrt-packages master
 			AddPackage small kenzok8 small master
                         
-			patch < ${CustomFiles}/mt7981/0001-Add-iptables-socket.patch -p1 -d ${WORK}
+			#patch < ${CustomFiles}/mt7981/0001-Add-iptables-socket.patch -p1 -d ${WORK}
 			
 			#mosdns_version="5.3.3"
 			#wget --quiet --no-check-certificate -P /tmp \
