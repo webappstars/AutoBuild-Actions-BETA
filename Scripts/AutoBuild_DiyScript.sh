@@ -107,17 +107,17 @@ EOF
 		
                 
                        
-                #rm -r ${FEEDS_LUCI}/luci-theme-argon*
+                rm -r ${FEEDS_LUCI}/luci-theme-argon*
                 #rm -r feeds/other/lean/luci-app-turboacc
 		#rm -rf feeds/packages/net/{xray*,v2ray*,smartdns}
-                #rm -rf feeds/packages/utils/v2dat
+                rm -rf feeds/packages/utils/v2dat
                 rm -rf feeds/packages/lang/golang
                 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 		#rm -r ${FEEDS_LUCI}/luci-app-argon-config
 		
-		#AddPackage other jerrykuku luci-app-argon-config master 
+		AddPackage other jerrykuku luci-app-argon-config master 
 		#AddPackage other sbwml luci-app-mosdns v5
-		#AddPackage themes jerrykuku luci-theme-argon master
+		AddPackage themes jerrykuku luci-theme-argon 18.06
                 #AddPackage other sbwml v2ray-geodata master
 		 
   
