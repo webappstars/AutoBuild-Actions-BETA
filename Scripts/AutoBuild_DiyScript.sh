@@ -168,8 +168,11 @@ Firmware_Diy() {
                         rm -r feeds/packages/net/xray-core
 			rm -r feeds/packages/net/smartdns
                         rm -r feeds/packages/net/chinadns-ng
-		        find ${WORK}/package/ | grep Makefile | grep mosdns | xargs rm -f
-			find ${WORK}/package/ | grep Makefile | grep sing-box | xargs rm -f
+		        rm -r feeds/packages/net/mosdns
+	                rm -r feeds/packages/net/sing-box
+	  
+                        #find ${WORK}/package/ | grep Makefile | grep mosdns | xargs rm -f
+			#find ${WORK}/package/ | grep Makefile | grep sing-box | xargs rm -f
                         AddPackage kenzo kenzok8 openwrt-packages master
 			AddPackage small kenzok8 small master
                         
