@@ -175,6 +175,7 @@ Firmware_Diy() {
 			#find ${WORK}/package/ | grep Makefile | grep sing-box | xargs rm -f
                         AddPackage kenzo kenzok8 openwrt-packages master
 			AddPackage small kenzok8 small master
+                        AddPackage other UnblockNeteaseMusic luci-app-unblockneteasemusic js
                         
 			#patch < ${CustomFiles}/mt7981/0001-Add-iptables-socket.patch -p1 -d ${WORK}
 			
