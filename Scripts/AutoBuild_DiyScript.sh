@@ -116,7 +116,7 @@ Firmware_Diy() {
 		#rm -r ${FEEDS_LUCI}/luci-app-argon-config
 		
 		AddPackage other jerrykuku luci-app-argon-config master 
-		AddPackage other UnblockNeteaseMusic  luci-app-unblockneteasemusic js
+		
 		AddPackage themes jerrykuku luci-theme-argon 18.06
                 #AddPackage other sbwml v2ray-geodata master
 		 
@@ -172,7 +172,7 @@ Firmware_Diy() {
 	                rm -r feeds/packages/net/sing-box
 	                rm -r feeds/packages/lang/node
 		        git clone -b openwrt-19.07 https://github.com/nxhack/openwrt-node-packages.git feeds/packages/lang/node
-                        
+                        AddPackage other UnblockNeteaseMusic  luci-app-unblockneteasemusic js
 			#find ${WORK}/package/ | grep Makefile | grep mosdns | xargs rm -f
 			#find ${WORK}/package/ | grep Makefile | grep sing-box | xargs rm -f
                         AddPackage kenzo kenzok8 openwrt-packages master
