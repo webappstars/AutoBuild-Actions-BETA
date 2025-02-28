@@ -116,7 +116,7 @@ Firmware_Diy() {
 		#rm -r ${FEEDS_LUCI}/luci-app-argon-config
 		
 		AddPackage other jerrykuku luci-app-argon-config master 
-		#AddPackage other sbwml luci-app-mosdns v5
+		AddPackage other UnblockNeteaseMusic  luci-app-unblockneteasemusic js
 		AddPackage themes jerrykuku luci-theme-argon 18.06
                 #AddPackage other sbwml v2ray-geodata master
 		 
