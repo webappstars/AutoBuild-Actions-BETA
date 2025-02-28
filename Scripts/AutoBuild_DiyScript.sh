@@ -105,10 +105,10 @@ Firmware_Diy() {
                 #rm -rf ${FEEDS_LUCI}/luci-app-passwall
                 #rm -rf ${FEEDS_LUCI}/luci-app-smartdns
 
-               ./scripts/feeds update node
-               rm -r ./package/feeds/packages/node
-               rm -r ./package/feeds/packages/node-*
-               ./scripts/feeds install -a -p node
+               #./scripts/feeds update node
+               #rm -r ./package/feeds/packages/node
+               #rm -r ./package/feeds/packages/node-*
+               #./scripts/feeds install -a -p node
 
                 
                        
