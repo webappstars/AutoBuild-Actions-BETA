@@ -104,7 +104,12 @@ Firmware_Diy() {
 		#rm -r ${FEEDS_PKG}/smartdns
                 #rm -rf ${FEEDS_LUCI}/luci-app-passwall
                 #rm -rf ${FEEDS_LUCI}/luci-app-smartdns
-		
+
+               ./scripts/feeds update node
+               rm -r ./package/feeds/packages/node
+               rm -r ./package/feeds/packages/node-*
+               ./scripts/feeds install -a -p node
+
                 
                        
                 rm -r ${FEEDS_LUCI}/luci-theme-argon
