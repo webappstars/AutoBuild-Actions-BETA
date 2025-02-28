@@ -16,8 +16,11 @@ CONFIG_COREMARK_NUMBER_OF_THREADS=8
 CONFIG_DEFAULT_coremark=y
 
 CONFIG_PACKAGE_luci-app-uhttpd=y
-CONFIG_PACKAGE_luci-ssl-openssl=y
 
+
+CONFIG_PACKAGE_luci-app-unblockmusic=y
+CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_Go=y
+CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_NodeJS=y
 
 
 
