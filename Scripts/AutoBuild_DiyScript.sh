@@ -170,9 +170,9 @@ Firmware_Diy() {
                         rm -r feeds/packages/net/chinadns-ng
 		        rm -r feeds/packages/net/mosdns
 	                rm -r feeds/packages/net/sing-box
-	                rm -r feeds/packages/lang/node
-		        git clone -b openwrt-19.07 https://github.com/nxhack/openwrt-node-packages.git feeds/packages/lang/node
-                        AddPackage other UnblockNeteaseMusic  luci-app-unblockneteasemusic js
+	                #rm -r feeds/packages/lang/node
+		        #git clone -b openwrt-19.07 https://github.com/nxhack/openwrt-node-packages.git feeds/packages/lang/node
+                        #AddPackage other UnblockNeteaseMusic  luci-app-unblockneteasemusic js
 			#find ${WORK}/package/ | grep Makefile | grep mosdns | xargs rm -f
 			#find ${WORK}/package/ | grep Makefile | grep sing-box | xargs rm -f
                         AddPackage kenzo kenzok8 openwrt-packages master
