@@ -123,7 +123,7 @@ Firmware_Diy() {
 		AddPackage other jerrykuku luci-app-argon-config master 
 		
 		AddPackage themes jerrykuku luci-theme-argon 18.06
-                #AddPackage other sbwml v2ray-geodata master
+                AddPackage other Hyy2001X AutoBuild-Packages master
 		 
   
                 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
