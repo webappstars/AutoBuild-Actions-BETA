@@ -18,8 +18,8 @@ CONFIG_DEFAULT_coremark=y
 CONFIG_PACKAGE_luci-app-uhttpd=y
 CONFIG_PACKAGE_luci-app-unblockmusic=y
 CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_Go=y
-CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_NodeJS=y
-CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
+# CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_NodeJS is not set
+# CONFIG_PACKAGE_luci-app-unblockneteasemusic is not set
 
 
 # LUCI Appliciations
