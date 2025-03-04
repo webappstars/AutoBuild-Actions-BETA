@@ -17,15 +17,13 @@ CONFIG_COREMARK_OPTIMIZE_O3=y
 CONFIG_COREMARK_ENABLE_MULTITHREADING=y
 CONFIG_COREMARK_NUMBER_OF_THREADS=8
 CONFIG_DEFAULT_coremark=y
-CONFIG_PACKAGE_libustream-mbedtls=y
-CONFIG_PACKAGE_libustream-openssl=y
-CONFIG_PACKAGE_libustream-wolfssl=y
+
 
 
 CONFIG_PACKAGE_luci-app-uhttpd=y
-# CONFIG_PACKAGE_luci-app-unblockmusic is not set
+CONFIG_PACKAGE_luci-app-unblockmusic=y
 # CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_Go is not set
-# CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_NodeJS is not set
+CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_NodeJS=y
 CONFIG_PACKAGE_luci-app-natter2=y
 CONFIG_PACKAGE_luci-app-autoupdate=y
 
