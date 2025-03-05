@@ -117,7 +117,7 @@ Firmware_Diy() {
 		#rm -rf feeds/packages/net/{xray*,v2ray*,smartdns}
                 rm -rf feeds/packages/utils/v2dat
                 rm -rf feeds/packages/lang/golang
-                git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+                git clone https://github.com/kenzok8/golang -b 1.23 feeds/packages/lang/golang
 		#rm -r ${FEEDS_LUCI}/luci-app-argon-config
 		
 		AddPackage other jerrykuku luci-app-argon-config master 
