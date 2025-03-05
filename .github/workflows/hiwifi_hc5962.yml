@@ -243,7 +243,7 @@ jobs:
       id: compile
       run: |
         cd openwrt
-        make -j1 || make -j4 V=s
+        make -j4 || make -j1 V=s
         [ "$?" == 0 ] && echo "Compile_Result=true" >> $GITHUB_ENV || echo "Compile_Result=false" >> $GITHUB_ENV
 
     - name: Checkout Firmware
