@@ -169,7 +169,8 @@ Firmware_Diy() {
                 hiwifi_hc5962)
                         # rm -r feeds/luci/applications/luci-app-passwall			
                         rm -r feeds/luci/applications/luci-app-smartdns
-			# rm -r feeds/luci/applications/luci-app-mosdns
+			rm -r feeds/luci/applications/luci-app-argon-config
+                        # rm -r feeds/luci/applications/luci-app-mosdns
                         rm -r feeds/packages/net/xray-core
 			rm -r feeds/packages/net/smartdns
                         rm -r feeds/packages/net/chinadns-ng
