@@ -120,10 +120,10 @@ Firmware_Diy() {
                 #git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 		#rm -r ${FEEDS_LUCI}/luci-app-argon-config
 		
-		AddPackage other jerrykuku luci-app-argon-config master 
+		AddPackage other jerrykuku luci-app-argon-config 18.06 
 		
 		AddPackage themes jerrykuku luci-theme-argon 18.06
-                AddPackage other Hyy2001X AutoBuild-Packages master
+                #AddPackage other Hyy2001X AutoBuild-Packages master
 		 
   
                 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
