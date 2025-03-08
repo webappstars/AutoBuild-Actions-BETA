@@ -112,7 +112,7 @@ Firmware_Diy() {
 
                 
                        
-                rm -r ${FEEDS_LUCI}/luci-theme-argon
+                rm -r ${FEEDS_LUCI}/luci-theme-argon*
                 #rm -r feeds/other/lean/luci-app-turboacc
 		#rm -rf feeds/packages/net/{xray*,v2ray*,smartdns}
                 rm -rf feeds/packages/utils/v2dat
