@@ -119,7 +119,7 @@ Firmware_Diy() {
                 #rm -rf feeds/packages/lang/golang
                 #git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 		#rm -r ${FEEDS_LUCI}/luci-app-argon-config
-		
+		rm -r feeds/luci/applications/luci-app-argon-config
 		AddPackage other jerrykuku luci-app-argon-config 18.06 
 		
 		AddPackage themes jerrykuku luci-theme-argon 18.06
@@ -169,7 +169,7 @@ Firmware_Diy() {
                 hiwifi_hc5962)
                         # rm -r feeds/luci/applications/luci-app-passwall			
                         rm -r feeds/luci/applications/luci-app-smartdns
-			rm -r feeds/luci/applications/luci-app-argon-config
+			# rm -r feeds/luci/applications/luci-app-argon-config
                         # rm -r feeds/luci/applications/luci-app-mosdns
                         rm -r feeds/packages/net/xray-core
 			rm -r feeds/packages/net/smartdns
