@@ -217,7 +217,7 @@ Firmware_Diy() {
 				# AddPackage passwall xiaorouji openwrt-passwall2 main
 				rm -r ${FEEDS_LUCI}/luci-app-passwall
 				AddPackage other WROIATE luci-app-socat main
-    				rm -r ${FEEDS_LUCI}/luci-app-socat
+    			#rm -r ${FEEDS_LUCI}/luci-app-socat
 				AddPackage other sbwml luci-app-mosdns v5
 				mosdns_version="5.3.3"
 				wget --quiet --no-check-certificate -P /tmp \
@@ -273,21 +273,14 @@ Firmware_Diy() {
 
 		hysteria_version="2.6.1"
 		wstunnel_version="9.2.3"
-		taierspeed_version="1.7.2"
-		
 		wget --quiet --no-check-certificate -P /tmp \
 			https://github.com/apernet/hysteria/releases/download/app%2Fv${hysteria_version}/hysteria-linux-amd64
-			
 		wget --quiet --no-check-certificate -P /tmp \
 			https://github.com/erebe/wstunnel/releases/download/v${wstunnel_version}/wstunnel_${wstunnel_version}_linux_amd64.tar.gz
-		wget --quiet --no-check-certificate -P /tmp \
-			https://github.com/ztelliot/taierspeed-cli/releases/download/v${taierspeed_version}/taierspeed-cli_${taierspeed_version}_linux_amd64
-
 		tar -xvzf /tmp/wstunnel_${wstunnel_version}_linux_amd64.tar.gz -C /tmp
 		Copy /tmp/wstunnel ${BASE_FILES}/usr/bin
 		Copy /tmp/hysteria-linux-amd64 ${BASE_FILES}/usr/bin hysteria
-		Copy /tmp/taierspeed-cli_${taierspeed_version}_linux_amd64 ${BASE_FILES}/usr/bin taierspeed
-		chmod +x ${BASE_FILES}/usr/bin/hysteria ${BASE_FILES}/usr/bin/wstunnel ${BASE_FILES}/usr/bin/taierspeed
+		chmod +x ${BASE_FILES}/usr/bin/hysteria ${BASE_FILES}/usr/bin/wstunnel
 
 		# ReleaseDL https://api.github.com/repos/Loyalsoldier/v2ray-rules-dat/releases/latest geosite.dat ${BASE_FILES}/usr/v2ray
 		# ReleaseDL https://api.github.com/repos/Loyalsoldier/v2ray-rules-dat/releases/latest geoip.dat ${BASE_FILES}/usr/v2ray
