@@ -213,29 +213,31 @@ Firmware_Diy() {
 			case "${CONFIG_FILE}" in
 			x86_64)
 				# sed -i "s?/bin/login?/usr/libexec/login.sh?g" ${FEEDS_PKG}/ttyd/files/ttyd.config
+				AddPackage qosmate hudra0 qosmate main
+				AddPackage qosmate hudra0 luci-app-qosmate main
 				AddPackage passwall xiaorouji openwrt-passwall main
+			    AddPackage passwall xiaorouji openwrt-passwall-packages main
 				# AddPackage passwall xiaorouji openwrt-passwall2 main
 				rm -r ${FEEDS_LUCI}/luci-app-passwall
-				AddPackage other WROIATE luci-app-socat main
+				#AddPackage other WROIATE luci-app-socat main
     			#rm -r ${FEEDS_LUCI}/luci-app-socat
-				AddPackage other sbwml luci-app-mosdns v5
-				mosdns_version="5.3.3"
-				wget --quiet --no-check-certificate -P /tmp \
-					https://github.com/IrineSistiana/mosdns/releases/download/v${mosdns_version}/mosdns-linux-amd64.zip
-				unzip /tmp/mosdns-linux-amd64.zip -d /tmp
-				Copy /tmp/mosdns ${BASE_FILES}/usr/bin
-				chmod +x ${BASE_FILES}/usr/bin
-				sed -i "s?+mosdns ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
-				sed -i "s?+v2ray-geoip ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
-				sed -i "s?+v2ray-geosite ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
-				rm -r ${WORK}/package/other/luci-app-mosdns/mosdns
-				
-				Copy ${CustomFiles}/socat.Makefile ${FEEDS_PKG}/socat Makefile
-				rm -r ${FEEDS_PKG}/socat/files
+				#AddPackage other sbwml luci-app-mosdns v5
+				#mosdns_version="5.3.3"
+				#wget --quiet --no-check-certificate -P /tmp \
+				#	https://github.com/IrineSistiana/mosdns/releases/download/v${mosdns_version}/mosdns-linux-amd64.zip
+				#unzip /tmp/mosdns-linux-amd64.zip -d /tmp
+				#Copy /tmp/mosdns ${BASE_FILES}/usr/bin
+				#chmod +x ${BASE_FILES}/usr/bin
+				#sed -i "s?+mosdns ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
+				#sed -i "s?+v2ray-geoip ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
+				#sed -i "s?+v2ray-geosite ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
+				#rm -r ${WORK}/package/other/luci-app-mosdns/mosdns
+				#Copy ${CustomFiles}/socat.Makefile ${FEEDS_PKG}/socat Makefile
+				#rm -r ${FEEDS_PKG}/socat/files
 				Copy ${CustomFiles}/speedtest ${BASE_FILES}/usr/bin
 				chmod +x ${BASE_FILES}/usr/bin/speedtest
 				
-				sed -i '/PKG_FIXUP/d' ${WORK}/feeds/packages/libs/libffi/Makefile
+				# sed -i '/PKG_FIXUP/d' ${WORK}/feeds/packages/libs/libffi/Makefile
 			;;
 			esac
 		;;
@@ -252,16 +254,16 @@ Firmware_Diy() {
 		case "${TARGET_PROFILE}" in
 		cmcc_rax3000m | jcg_q30)
 			AddPackage passwall xiaorouji openwrt-passwall main
-			rm -r ${FEEDS_LUCI}/luci-app-passwall
+			AddPackage passwall xiaorouji openwrt-passwall-packages main
 			patch < ${CustomFiles}/mt7981/0001-Add-iptables-socket.patch -p1 -d ${WORK}
-			rm -r ${WORK}/package/network/services/dnsmasq
+			rm -rf ${WORK}/feeds/luci/applications/luci-app-passwall
+			rm -rf ${WORK}/feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
+			rm -rf ${WORK}/package/network/services/dnsmasq
 			Copy ${CustomFiles}/dnsmasq ${WORK}/package/network/services
 
-			find ${WORK}/package/ | grep Makefile | grep v2ray-geodata | xargs rm -f
 			find ${WORK}/package/ | grep Makefile | grep mosdns | xargs rm -f
 			
 			AddPackage other sbwml luci-app-mosdns v5
-			AddPackage other sbwml v2ray-geodata master
 		;;
 		esac
 	;;
