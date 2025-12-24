@@ -166,7 +166,7 @@ Firmware_Diy() {
 			AddPackage passwall-depends xiaorouji openwrt-passwall-packages main
 			AddPackage passwall-luci xiaorouji openwrt-passwall main
 		;;
-                hiwifi_hc5962)
+        hiwifi_hc5962)
                         # rm -r feeds/luci/applications/luci-app-passwall			
                         # rm -r feeds/luci/applications/luci-app-smartdns
 			# rm -r feeds/luci/applications/luci-app-argon-config
@@ -182,7 +182,7 @@ Firmware_Diy() {
                         #AddPackage other UnblockNeteaseMusic  luci-app-unblockneteasemusic js
 			#find ${WORK}/package/ | grep Makefile | grep mosdns | xargs rm -f
 			#find ${WORK}/package/ | grep Makefile | grep sing-box | xargs rm -f
-                        AddPackage kenzo kenzok8 openwrt-packages master
+            AddPackage kenzo kenzok8 openwrt-packages master
 			AddPackage small kenzok8 small master
                         #AddPackage node  nxhack  openwrt-node-packages openwrt-19.07
                         
