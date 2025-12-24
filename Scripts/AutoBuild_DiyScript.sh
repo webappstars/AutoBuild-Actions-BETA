@@ -97,6 +97,8 @@ Firmware_Diy() {
 		# sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 		# sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase="/luci-static/argon-mod"' $(PKG_Finder d package default-settings)/files/zzz-default-settings
 		#sed -i "s?openwrt-23.05?master?g" ${FEEDS_CONF}
+		sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+        sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
 
                
 		# git reset --hard d49a28094294a731462661e3e00c59b4f4b5aa5a
@@ -112,17 +114,17 @@ Firmware_Diy() {
 
                 
                        
-                rm -r ${FEEDS_LUCI}/luci-theme-argon*
+                #rm -r ${FEEDS_LUCI}/luci-theme-argon*
                 #rm -r feeds/other/lean/luci-app-turboacc
 		#rm -rf feeds/packages/net/{xray*,v2ray*,smartdns}
-                rm -r feeds/packages/utils/v2dat
+                #rm -r feeds/packages/utils/v2dat
                 #rm -rf feeds/packages/lang/golang
                 #git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 		#rm -r ${FEEDS_LUCI}/luci-app-argon-config
 		#rm -r feeds/luci/applications/luci-app-argon-config
-		AddPackage other jerrykuku luci-app-argon-config 18.06 
+		#AddPackage other jerrykuku luci-app-argon-config 18.06 
 		
-		AddPackage themes jerrykuku luci-theme-argon 18.06
+		#AddPackage themes jerrykuku luci-theme-argon 18.06
                 #AddPackage other Hyy2001X AutoBuild-Packages master
 		 
   
@@ -134,7 +136,7 @@ Firmware_Diy() {
 		
 		#rm -r ${FEEDS_PKG}/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*}
                 #rm -r feeds/packages/utils/v2dat
-		rm -r feeds/packages/net/v2ray-geodata
+		#rm -r feeds/packages/net/v2ray-geodata
                 #git clone https://github.com/sbwml/v2ray-geodata ${FEEDS_PKG}/net/v2ray-geodata
                 #rm -rf feeds/luci/applications/luci-app-passwall
 		#rm -r ${FEEDS_PKG}/lang/golang
@@ -171,19 +173,19 @@ Firmware_Diy() {
                         # rm -r feeds/luci/applications/luci-app-smartdns
 			# rm -r feeds/luci/applications/luci-app-argon-config
                         # rm -r feeds/luci/applications/luci-app-mosdns
-                        rm -r feeds/packages/net/xray-core
+                        #rm -r feeds/packages/net/xray-core
 			# rm -r feeds/packages/net/smartdns
-                        rm -r feeds/packages/net/chinadns-ng
-		        rm -r feeds/packages/net/mosdns
-	                rm -r feeds/packages/net/sing-box
-	                rm -r feeds/packages/net/geoview
+                        #rm -r feeds/packages/net/chinadns-ng
+		        #rm -r feeds/packages/net/mosdns
+	                #rm -r feeds/packages/net/sing-box
+	                #rm -r feeds/packages/net/geoview
                         #rm -r feeds/packages/lang/node
 		        #git clone -b openwrt-19.07 https://github.com/nxhack/openwrt-node-packages.git feeds/packages/lang/node
                         #AddPackage other UnblockNeteaseMusic  luci-app-unblockneteasemusic js
 			#find ${WORK}/package/ | grep Makefile | grep mosdns | xargs rm -f
 			#find ${WORK}/package/ | grep Makefile | grep sing-box | xargs rm -f
-            AddPackage kenzo kenzok8 openwrt-packages master
-			AddPackage small kenzok8 small master
+            #AddPackage kenzo kenzok8 openwrt-packages master
+			#AddPackage small kenzok8 small master
                         #AddPackage node  nxhack  openwrt-node-packages openwrt-19.07
                         
 			#patch < ${CustomFiles}/mt7981/0001-Add-iptables-socket.patch -p1 -d ${WORK}
