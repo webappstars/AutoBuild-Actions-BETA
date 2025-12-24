@@ -168,7 +168,7 @@ Firmware_Diy() {
 			AddPackage passwall-depends xiaorouji openwrt-passwall-packages main
 			AddPackage passwall-luci xiaorouji openwrt-passwall main
 		;;
-        hiwifi_hc5962)
+        # hiwifi_hc5962)
                         # rm -r feeds/luci/applications/luci-app-passwall			
                         # rm -r feeds/luci/applications/luci-app-smartdns
 			# rm -r feeds/luci/applications/luci-app-argon-config
