@@ -25,11 +25,9 @@ Firmware_Diy() {
     case "${OP_AUTHOR}/${OP_REPO}:${OP_BRANCH}" in
     webappstars/myde:master)
         # 基础 Feed 设置
-        sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
-        sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
-        git pull
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
+        sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' ${FEEDS_CONF}
+        sed -i '2i src-git small https://github.com/kenzok8/small' ${FEEDS_CONF}
+
 
         # 硬件特定配置
         case "${TARGET_BOARD}" in
