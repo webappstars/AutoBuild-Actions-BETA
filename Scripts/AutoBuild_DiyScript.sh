@@ -168,45 +168,7 @@ Firmware_Diy() {
 			AddPackage passwall-depends xiaorouji openwrt-passwall-packages main
 			AddPackage passwall-luci xiaorouji openwrt-passwall main
 		;;
-        # hiwifi_hc5962)
-                        # rm -r feeds/luci/applications/luci-app-passwall			
-                        # rm -r feeds/luci/applications/luci-app-smartdns
-			# rm -r feeds/luci/applications/luci-app-argon-config
-                        # rm -r feeds/luci/applications/luci-app-mosdns
-                        #rm -r feeds/packages/net/xray-core
-			# rm -r feeds/packages/net/smartdns
-                        #rm -r feeds/packages/net/chinadns-ng
-		        #rm -r feeds/packages/net/mosdns
-	                #rm -r feeds/packages/net/sing-box
-	                #rm -r feeds/packages/net/geoview
-                        #rm -r feeds/packages/lang/node
-		        #git clone -b openwrt-19.07 https://github.com/nxhack/openwrt-node-packages.git feeds/packages/lang/node
-                        #AddPackage other UnblockNeteaseMusic  luci-app-unblockneteasemusic js
-			#find ${WORK}/package/ | grep Makefile | grep mosdns | xargs rm -f
-			#find ${WORK}/package/ | grep Makefile | grep sing-box | xargs rm -f
-            #AddPackage kenzo kenzok8 openwrt-packages master
-			#AddPackage small kenzok8 small master
-                        #AddPackage node  nxhack  openwrt-node-packages openwrt-19.07
-                        
-			#patch < ${CustomFiles}/mt7981/0001-Add-iptables-socket.patch -p1 -d ${WORK}
-			
-			#mosdns_version="5.3.3"
-			#wget --quiet --no-check-certificate -P /tmp \
-				#https://github.com/IrineSistiana/mosdns/releases/download/v${mosdns_version}/mosdns-linux-mipsle-softfloat.zip
-			#unzip /tmp/mosdns-linux-mipsle-softfloat.zip -d /tmp
-			#Copy /tmp/mosdns ${BASE_FILES}/usr/bin
-			#chmod +x ${BASE_FILES}/usr/bin
-			#sed -i "s?+mosdns ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
-			#sed -i "s?+v2ray-geoip ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
-			#sed -i "s?+v2ray-geosite ??g" ${WORK}/package/other/luci-app-mosdns/luci-app-mosdns/Makefile
-			#rm -r ${WORK}/package/other/luci-app-mosdns/mosdns
-                        #wget --quiet --no-check-certificate -P /tmp \
-                               #https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-mips32le.zip
-                        #unzip /tmp/Xray-linux-mips32le.zip xray_softfloat -d /tmp 
-			#Copy /tmp/xray_softfloat ${BASE_FILES}/usr/bin xray
-                        #chmod +x ${BASE_FILES}/usr/bin/xray
-		;;
-		esac
+
 	;;
 	immortalwrt/immortalwrt*)
 		case "${TARGET_PROFILE}" in
