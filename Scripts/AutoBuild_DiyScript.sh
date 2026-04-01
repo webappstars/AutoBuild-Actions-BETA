@@ -157,7 +157,7 @@ EOF
 				sed -i 's/^local excluded_domain = {.*/local excluded_domain = {}/' package/passwall/openwrt-passwall/luci-app-passwall/root/usr/share/passwall/rule_update.lua
 				
 				rm -rf feeds/packages/lang/golang
-				git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
+				git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
 				
 				rm -r ${FEEDS_LUCI}/luci-app-passwall
 				rm -rf ${FEEDS_PKG}/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
